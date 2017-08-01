@@ -6,9 +6,9 @@ if [ "$1" = "" ]; then
 fi
 
 echo "Enter Package Name:"
-read $packageName
+read -r packageName
 echo "Enter Package File Name"
-read $packageFileName
+read -r packageFileName
 
 uname=$(uname)
 echo "OS type: $uname"
@@ -32,8 +32,8 @@ cat whitelist-1.0.xml | grep  -v "</applicationLists" | grep -v "</whiteList" > 
 
 echo "        <application>
             <property>
-                <name>"$packageName"</name>
-                <package>"$packageFileName"</package>
+                <name>$packageName</name>
+                <package>$packageFileName</package>
                 <versionCode>1-999999999</versionCode>
                 <keyStoreLists> " >> whitelist-1.0-new.xml
 #Need to handle case of sig containing multiple lines - some APKS have more than one sig
