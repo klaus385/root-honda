@@ -68,6 +68,7 @@ adb push whitelist-1.0-new.xml /data/local/tmp/whitelist-1.0-new.xml
 
 adb shell "/data/local/tmp/rootme/su -c 'cat /data/local/tmp/whitelist-1.0-new.xml > /data/data/whitelist-1.0.xml'"
 adb shell "/data/local/tmp/rootme/su -c 'chown system:system /data/data/whitelist-1.0.xml'"
+adb push "$1" /data/local/tmp/
 adb install -r "$1"
 #adb push $1 /data/local/tmp/$1
 #adb shell "/data/local/tmp/rootme/su -c 'pm install -r /data/local/tmp/$1'"
